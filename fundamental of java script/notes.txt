@@ -1,0 +1,80 @@
+what is DOM 
+when a web page is loded, the browser creates a Document object model(DOM) of the page.
+
+DOM Manipulation
+  selecting with id---> document.getElementById ("page");
+  selecting with class ---> document.get element by class name class="page".
+  selecting with tag ---> document.get element by tag="p".
+
+    let heading=document.getElementById("heading");// return value
+    console.log(heading);
+
+QUERY SELECTOR
+    document.querySelector("myid/myclass/tag");//return first element
+    document.querySelectorAll("myid/myclass/tag")// returns a nodelist
+
+properties
+  tagName: returns tag for element nodelist
+  innerText: retutn the text content of the element and all its children
+  innerHTML: returns the plain text of HTML contents in the elements
+  textContent: returns textual content even for hidden elements
+
+let divs= document.querySelectorAll(".box");
+let index=0;
+for(div of divs){
+    div.innerText=`new unique code is ${index}`;
+    index++;
+}
+
+attributes
+     getAttribute(attr)//to get the attribute balue
+     setAttribute(attr,value) // to set the attribute value the
+
+ let div=document.querySelector("div");
+console.log(div);
+let id= div.getAttribute("id");
+console.log(id);
+
+let name =div.getAttribute("name");
+console.log(name);
+
+let div= document.querySelector("div");
+.node.style
+
+insert element           (let el= document.createElement("div"))
+    node.append(el)    //add at the end of node(inside)
+    node.perpend(el)   //adds at the start of node (inside)
+    node.before(el)    //adds before the node (outside)
+    node.after(el)     //adds after the node (outside)
+
+delete element
+    node.remove()      //remove the node
+
+
+
+events in js
+    the change in the stste of an object is know as an event
+    Events are fired to notify code of" intersting changes" that may affect code execution.
+       * Mouse events (click,double click etc);
+       * Keyboard events ( keypress,keyup,keydown);
+       *Form events(submit etc);
+       *Print event & many more.
+ syntex:-
+       node.event=()=>{
+         //handle here.
+       }
+    Ex:-
+    div.onclick=(){
+        console.log("you botton is clicked);
+    }
+Event object
+    it is a special object that hes details about the event.
+    all event handlers have access to the event object's properties and methods.
+ syntex:-
+       node.event=(e)=>{
+        //handle here
+       }
+Event listeners
+   node.addEventListener(event,callback)
+   node.removeElementListener(event,callback)
+   note:- the callback reference should be same to remove
